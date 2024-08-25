@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing Page</title>
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .container {
+      text-align: center;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+
+    h1 {
+      margin-bottom: 1rem;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .buttons {
+      margin-top: 2rem;
+    }
+
+    .mdc-button {
+      margin: 0.5rem;
+    }
+
+    .slide-in {
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="slide-in">Welcome to Our Site</h1>
+    <div class="buttons">
+      <button id="helloButton" class="mdc-button mdc-button--raised">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">Simple Tracking</span>
+      </button>
+      <button id="hello2Button" class="mdc-button mdc-button--raised">
+        <span class="mdc-button__ripple"></span>
+        <span class="mdc-button__label">Tracking with Gesture</span>
+      </button>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      mdc.autoInit();
+
+      document.getElementById('helloButton').addEventListener('click', function () {
+        window.location.href = 'hello.html';
+      });
+
+      document.getElementById('hello2Button').addEventListener('click', function () {
+        window.location.href = 'hello2.html';
+      });
+    });
+  </script>
+</body>
+</html>
